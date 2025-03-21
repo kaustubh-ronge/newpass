@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlock the Clue!</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      text-align: center;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #d9534f;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Unlock the Clue!</h1>
+    <input type="password" id="passwordInput" placeholder="Enter the password">
+    <button onclick="checkPassword()">Submit</button>
+    <div id="errorMessage" class="message hidden">Incorrect password! Try again.</div>
+    <div id="successMessage" class="hidden">
+      <h2>🎉 Congratulations! 🎉</h2>
+      <p>You've unlocked the clue: <strong>Look under the keyboard!</strong></p>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const passwordInput = document.getElementById('passwordInput').value;
+      const errorMessage = document.getElementById('errorMessage');
+      const successMessage = document.getElementById('successMessage');
+
+      // Set the correct password here
+      const correctPassword = "Mountain12345";
+
+      if (passwordInput === correctPassword) {
+        successMessage.classList.remove('hidden');
+        errorMessage.classList.add('hidden');
+      } else {
+        errorMessage.classList.remove('hidden');
+        successMessage.classList.add('hidden');
+      }
+    }
+  </script>
+</body>
+</html>
