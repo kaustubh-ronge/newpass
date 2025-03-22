@@ -4,7 +4,7 @@
       const successMessage = document.getElementById('successMessage');
 
       // Set the correct password here
-      const correctPassword = "Mountain12345";
+      const correctPassword = "sveri";
 
       if (passwordInput === correctPassword) {
         successMessage.classList.remove('hidden');
